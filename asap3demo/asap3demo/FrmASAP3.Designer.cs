@@ -34,20 +34,22 @@
             this.txtPort = new System.Windows.Forms.TextBox();
             this.txtIP = new System.Windows.Forms.TextBox();
             this.btnConnect = new System.Windows.Forms.Button();
-            this.btnGETONLINEVALUE = new System.Windows.Forms.GroupBox();
+            this.grpPUMA = new System.Windows.Forms.GroupBox();
+            this.btnSELECT = new System.Windows.Forms.Button();
             this.btnGETLOOKUPTABLE = new System.Windows.Forms.Button();
             this.btnSETPARAMETER = new System.Windows.Forms.Button();
             this.btnGETPARAMETER = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGETONLINEVALUE = new System.Windows.Forms.Button();
             this.btnACQUISITION = new System.Windows.Forms.Button();
             this.btnIDENTIFY = new System.Windows.Forms.Button();
             this.btnINIT = new System.Windows.Forms.Button();
+            this.btnEXIT = new System.Windows.Forms.Button();
             this.txtLog = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnEXIT = new System.Windows.Forms.Button();
-            this.btnSELECT = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnSELECTTABLE = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.btnGETONLINEVALUE.SuspendLayout();
+            this.grpPUMA.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,33 +110,45 @@
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // btnGETONLINEVALUE
+            // grpPUMA
             // 
-            this.btnGETONLINEVALUE.Controls.Add(this.btnSELECT);
-            this.btnGETONLINEVALUE.Controls.Add(this.btnGETLOOKUPTABLE);
-            this.btnGETONLINEVALUE.Controls.Add(this.btnSETPARAMETER);
-            this.btnGETONLINEVALUE.Controls.Add(this.btnGETPARAMETER);
-            this.btnGETONLINEVALUE.Controls.Add(this.button1);
-            this.btnGETONLINEVALUE.Controls.Add(this.btnACQUISITION);
-            this.btnGETONLINEVALUE.Controls.Add(this.btnIDENTIFY);
-            this.btnGETONLINEVALUE.Controls.Add(this.btnINIT);
-            this.btnGETONLINEVALUE.Controls.Add(this.btnEXIT);
-            this.btnGETONLINEVALUE.Controls.Add(this.btnConnect);
-            this.btnGETONLINEVALUE.Location = new System.Drawing.Point(12, 77);
-            this.btnGETONLINEVALUE.Name = "btnGETONLINEVALUE";
-            this.btnGETONLINEVALUE.Size = new System.Drawing.Size(301, 318);
-            this.btnGETONLINEVALUE.TabIndex = 5;
-            this.btnGETONLINEVALUE.TabStop = false;
-            this.btnGETONLINEVALUE.Text = "PUMA";
+            this.grpPUMA.Controls.Add(this.btnSELECTTABLE);
+            this.grpPUMA.Controls.Add(this.btnSELECT);
+            this.grpPUMA.Controls.Add(this.btnGETLOOKUPTABLE);
+            this.grpPUMA.Controls.Add(this.btnSETPARAMETER);
+            this.grpPUMA.Controls.Add(this.btnGETPARAMETER);
+            this.grpPUMA.Controls.Add(this.btnGETONLINEVALUE);
+            this.grpPUMA.Controls.Add(this.btnACQUISITION);
+            this.grpPUMA.Controls.Add(this.btnIDENTIFY);
+            this.grpPUMA.Controls.Add(this.btnINIT);
+            this.grpPUMA.Controls.Add(this.btnEXIT);
+            this.grpPUMA.Controls.Add(this.btnConnect);
+            this.grpPUMA.Location = new System.Drawing.Point(12, 77);
+            this.grpPUMA.Name = "grpPUMA";
+            this.grpPUMA.Size = new System.Drawing.Size(301, 345);
+            this.grpPUMA.TabIndex = 5;
+            this.grpPUMA.TabStop = false;
+            this.grpPUMA.Text = "PUMA";
+            // 
+            // btnSELECT
+            // 
+            this.btnSELECT.Location = new System.Drawing.Point(8, 107);
+            this.btnSELECT.Name = "btnSELECT";
+            this.btnSELECT.Size = new System.Drawing.Size(282, 23);
+            this.btnSELECT.TabIndex = 12;
+            this.btnSELECT.Text = "3.SELECT DESCRIPTION-FILE AND BINARY FILE";
+            this.btnSELECT.UseVisualStyleBackColor = true;
+            this.btnSELECT.Click += new System.EventHandler(this.btnSELECT_Click);
             // 
             // btnGETLOOKUPTABLE
             // 
-            this.btnGETLOOKUPTABLE.Location = new System.Drawing.Point(8, 252);
+            this.btnGETLOOKUPTABLE.Location = new System.Drawing.Point(8, 281);
             this.btnGETLOOKUPTABLE.Name = "btnGETLOOKUPTABLE";
             this.btnGETLOOKUPTABLE.Size = new System.Drawing.Size(282, 23);
             this.btnGETLOOKUPTABLE.TabIndex = 11;
-            this.btnGETLOOKUPTABLE.Text = "8.GET LOOKUP TABLE FROM AP-S ";
+            this.btnGETLOOKUPTABLE.Text = "9.GET LOOKUP TABLE FROM AP-S ";
             this.btnGETLOOKUPTABLE.UseVisualStyleBackColor = true;
+            this.btnGETLOOKUPTABLE.Click += new System.EventHandler(this.btnGETLOOKUPTABLE_Click);
             // 
             // btnSETPARAMETER
             // 
@@ -144,6 +158,7 @@
             this.btnSETPARAMETER.TabIndex = 10;
             this.btnSETPARAMETER.Text = "7.SET PARAMETER ON AP-S ";
             this.btnSETPARAMETER.UseVisualStyleBackColor = true;
+            this.btnSETPARAMETER.Click += new System.EventHandler(this.btnSETPARAMETER_Click);
             // 
             // btnGETPARAMETER
             // 
@@ -153,15 +168,17 @@
             this.btnGETPARAMETER.TabIndex = 9;
             this.btnGETPARAMETER.Text = "6.GET PARAMETER FROM AP-S ";
             this.btnGETPARAMETER.UseVisualStyleBackColor = true;
+            this.btnGETPARAMETER.Click += new System.EventHandler(this.btnGETPARAMETER_Click);
             // 
-            // button1
+            // btnGETONLINEVALUE
             // 
-            this.button1.Location = new System.Drawing.Point(8, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(282, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "5.GET ONLINE VALUE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGETONLINEVALUE.Location = new System.Drawing.Point(8, 165);
+            this.btnGETONLINEVALUE.Name = "btnGETONLINEVALUE";
+            this.btnGETONLINEVALUE.Size = new System.Drawing.Size(282, 23);
+            this.btnGETONLINEVALUE.TabIndex = 8;
+            this.btnGETONLINEVALUE.Text = "5.GET ONLINE VALUE";
+            this.btnGETONLINEVALUE.UseVisualStyleBackColor = true;
+            this.btnGETONLINEVALUE.Click += new System.EventHandler(this.btnGETONLINEVALUE_Click);
             // 
             // btnACQUISITION
             // 
@@ -171,6 +188,7 @@
             this.btnACQUISITION.TabIndex = 7;
             this.btnACQUISITION.Text = "4.PARAMETER FOR VALUE ACQUISITION  ";
             this.btnACQUISITION.UseVisualStyleBackColor = true;
+            this.btnACQUISITION.Click += new System.EventHandler(this.btnACQUISITION_Click);
             // 
             // btnIDENTIFY
             // 
@@ -192,57 +210,62 @@
             this.btnINIT.UseVisualStyleBackColor = true;
             this.btnINIT.Click += new System.EventHandler(this.btnINIT_Click);
             // 
+            // btnEXIT
+            // 
+            this.btnEXIT.Location = new System.Drawing.Point(8, 310);
+            this.btnEXIT.Name = "btnEXIT";
+            this.btnEXIT.Size = new System.Drawing.Size(282, 23);
+            this.btnEXIT.TabIndex = 4;
+            this.btnEXIT.Text = "10.EXIT";
+            this.btnEXIT.UseVisualStyleBackColor = true;
+            this.btnEXIT.Click += new System.EventHandler(this.btnEXIT_Click);
+            // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(6, 20);
+            this.txtLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLog.Location = new System.Drawing.Point(3, 17);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(414, 357);
+            this.txtLog.Size = new System.Drawing.Size(420, 402);
             this.txtLog.TabIndex = 6;
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.txtLog);
             this.groupBox3.Location = new System.Drawing.Point(319, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(426, 383);
+            this.groupBox3.Size = new System.Drawing.Size(426, 422);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Log";
             // 
-            // btnEXIT
+            // btnSELECTTABLE
             // 
-            this.btnEXIT.Location = new System.Drawing.Point(8, 281);
-            this.btnEXIT.Name = "btnEXIT";
-            this.btnEXIT.Size = new System.Drawing.Size(282, 23);
-            this.btnEXIT.TabIndex = 4;
-            this.btnEXIT.Text = "9.EXIT";
-            this.btnEXIT.UseVisualStyleBackColor = true;
-            this.btnEXIT.Click += new System.EventHandler(this.btnConnect_Click);
-            // 
-            // btnSELECT
-            // 
-            this.btnSELECT.Location = new System.Drawing.Point(8, 107);
-            this.btnSELECT.Name = "btnSELECT";
-            this.btnSELECT.Size = new System.Drawing.Size(280, 23);
-            this.btnSELECT.TabIndex = 12;
-            this.btnSELECT.Text = "3.SELECT DESCRIPTION-FILE AND BINARY FILE";
-            this.btnSELECT.UseVisualStyleBackColor = true;
+            this.btnSELECTTABLE.Location = new System.Drawing.Point(8, 252);
+            this.btnSELECTTABLE.Name = "btnSELECTTABLE";
+            this.btnSELECTTABLE.Size = new System.Drawing.Size(282, 23);
+            this.btnSELECTTABLE.TabIndex = 13;
+            this.btnSELECTTABLE.Text = "8.SELECT LOOKUP TABLE ";
+            this.btnSELECTTABLE.UseVisualStyleBackColor = true;
+            this.btnSELECTTABLE.Click += new System.EventHandler(this.btnSELECTTABLE_Click);
             // 
             // FrmASAP3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 400);
+            this.ClientSize = new System.Drawing.Size(757, 439);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.btnGETONLINEVALUE);
+            this.Controls.Add(this.grpPUMA);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmASAP3";
             this.Text = "ASAP3 DEMO";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.btnGETONLINEVALUE.ResumeLayout(false);
+            this.grpPUMA.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -257,18 +280,20 @@
         private System.Windows.Forms.TextBox txtPort;
         private System.Windows.Forms.TextBox txtIP;
         private System.Windows.Forms.Button btnConnect;
-        private System.Windows.Forms.GroupBox btnGETONLINEVALUE;
+        private System.Windows.Forms.GroupBox grpPUMA;
         private System.Windows.Forms.Button btnINIT;
         private System.Windows.Forms.Button btnIDENTIFY;
         private System.Windows.Forms.Button btnACQUISITION;
         private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGETONLINEVALUE;
         private System.Windows.Forms.Button btnGETPARAMETER;
         private System.Windows.Forms.Button btnGETLOOKUPTABLE;
         private System.Windows.Forms.Button btnSETPARAMETER;
         private System.Windows.Forms.Button btnEXIT;
         private System.Windows.Forms.Button btnSELECT;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnSELECTTABLE;
     }
 }
 
